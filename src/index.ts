@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import redis, { RedisClient } from "redis";
+import process from "process";
 
 const app: Application = express();
 const port = process.env.PORT || 8081;

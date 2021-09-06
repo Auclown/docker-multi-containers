@@ -41,3 +41,25 @@ node-app:
 - And this means it will build an image using the ```Dockerfile``` inside the directory, and ```ports``` specify the ports to open the containers
 
 - ```"4001:8081"``` means it create a connection with local port 8081 and container's port 8081
+
+# Stop multiple containers
+
+- ```docker stop {container-id}``` is a command line for stopping a single container
+
+- Since ```docker-compose``` runs multiple containers, running ```docker stop``` command for each containers will be a pain
+
+- ```docker-compose down``` command will stop all the containers that were being ran by ```docker-compose up```
+
+# When containers crash
+
+- Restart Policies: No, Always, On-failure and Unless-stopped.
+
+- ```No``` means never attempt to restart.
+
+- ```Always``` means always restart if the container stops for any reason.
+
+- ```On-failure``` means restart only when the container stops with an error
+
+- ```Unless-stopped``` means always restart unless the developers forcibly stop
+
+- In ```docker-compose.yml```, add ```restart``` to apply one of this restart policies to restart the container on crash
